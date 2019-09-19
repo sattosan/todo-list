@@ -1,19 +1,19 @@
-import { CREATE_TODO, DELETE_TODO, DELETE_ALL_TODOS } from './actions'
+import { CREATE_TODO, DELETE_TODO, DELETE_ALL_TODOS } from "../actions";
 
 const todos = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case CREATE_TODO:
-      const todo = { title: action.title }
-      const length = state.length
-      const id = length === 0 ? 1 : state[length - 1].id + 1
-      return [...state, { id, ...todo }]
+      const todo = { title: action.title };
+      const length = state.length;
+      const id = length === 0 ? 1 : state[length - 1].id + 1;
+      return [...state, { id, ...todo }];
     case DELETE_TODO:
-      return state.filter(todo => todo.id !== action.id)
+      return state.filter(todo => todo.id !== action.id);
     case DELETE_ALL_TODOS:
-      return []
+      return [];
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default todos
+export default todos;

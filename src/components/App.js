@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useReducer } from "react";
 
-import '../assets/stylesheets/App.css';
-import TodoPage from './TodoPage';
+import "../assets/stylesheets/App.css";
+import TodoPage from "./TodoPage";
+import reducer from "../reducers";
+import AppContext from "../contexts/AppContext";
 
 const App = () => {
+  const [todos, dispatch] = useReducer(reducer, []);
+
   return (
-    <div className="App">
+    <AppContext.Provider value={{ todos, dispatch }}>
       <TodoPage />
-    </div>
+    </AppContext.Provider>
   );
-}
+};
 
 export default App;

@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Todo = () => {
-  return <></>
-}
+const Todo = ({ todo }) => {
+  return (
+    <tr>
+      <td>{todo.id}</td>
+      <td>{todo.title}</td>
+    </tr>
+  );
+};
 
 export default Todo;

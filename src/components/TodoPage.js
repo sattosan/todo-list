@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import Todos from './Todos';
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
 
 const TodoPage = () => {
-	return (
-		<React.Fragment>
-			<h1>Todoリスト</h1>
-      <Todos />
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <TodoForm />
+      <TodoList />
+    </React.Fragment>
+  );
 };
 
 export default TodoPage;
